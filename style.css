@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,700&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: steelblue;
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.game-container {
+  width: 500px;
+  max-width: 80%;
+  position: relative;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+.figure-container {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+.figure-part {
+  display: none;
+}
+.word {
+  padding: 2em;
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  display: flex;
+}
+.word > .letter {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  position: relative;
+}
+.word > .letter::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: -5%;
+  height: 2px;
+  background-color: violet;
+}
+
+.wrong {
+  color: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: right;
+}
+.wrong > span {
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+/* popup */
+.popup {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.85);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+.popup .btn {
+  background: transparent;
+  background-color: #fff;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 400;
+  padding: 1em;
+  cursor: pointer;
+}
+.popup .btn:active {
+  transform: scale(0.98);
+}
+/* notification */
+.notification {
+  position: absolute;
+  background-color: violet;
+  padding: 1em;
+  bottom: 0;
+  border-radius: 10px 10px 0 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+.notification.show {
+  transform: translateY(0);
+}
